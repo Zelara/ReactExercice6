@@ -1,0 +1,9 @@
+html {
+  box-sizing: border-box;
+  font-size: clamp(16px, 0.5rem + 1vw, 24px);
+  font-family: 'Roboto', sans-serif;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
