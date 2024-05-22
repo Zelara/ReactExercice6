@@ -8,9 +8,10 @@ export default function ListeTaches({ taches, setTaches }) {
   useEffect(() => {
     async function chercherTaches() {
       try {
-        // Chercher toutes les tâches dans Firestore
+        // Chercher toutes les tâches dans Firestore ...
+        // N'oubliez pas ***d'attendre*** que le code asynchrone soit complété
         const toutesLesTaches = await lireTout();
-        // puis raffraîchir l'état React des tâches.
+        // ... puis raffraîchir l'état React des tâches.
         setTaches(toutesLesTaches);
       } catch (error) {
         console.error("Erreur lors de la récupération des tâches: ", error);
