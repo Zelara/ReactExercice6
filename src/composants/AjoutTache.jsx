@@ -1,7 +1,7 @@
 import "./AjoutTache.scss";
 import Button from "@mui/material/Button";
 import SendIcon from "@mui/icons-material/Send";
-import { creer } from "../code/tache-modele.js";
+import { creer } from "../code/tache-modele";
 
 export default function AjoutTache({ taches, setTaches, setFiltre }) {
   /**
@@ -9,7 +9,7 @@ export default function AjoutTache({ taches, setTaches, setFiltre }) {
    * @param {Event} evt Objet Event JS qui a déclenché l'appel
    */
   async function ajouterTache(evt) {
-    // Prévenir le formulaire d'être soumis (et de faire une requête HTTP
+    // Prévenir le formulaire d'être soumit (et de faire une requête HTTP
     // qui causerait une actualisation de la page !!!)
     evt.preventDefault();
     // Récupérer la valeur de la boîte de texte
@@ -29,10 +29,11 @@ export default function AjoutTache({ taches, setTaches, setFiltre }) {
 
       try {
         // Insérer la nouvelle tâche dans la collection Firestore et
-        // récupérer son identifiant généré par Firestore
+        // récupérer son identifiant généré par Firestore ...
         const id = await creer(nouvelleTache);
 
-        // Raffraîchir l'état des tâches une fois le code asynchrone est complété
+        // ... et raffraîchir l'état des tâches une fois le code
+        // asynchrone est complété  (avec setTaches())
         setTaches([...taches, { id, ...nouvelleTache }]);
       } catch (error) {
         console.error("Erreur lors de l'ajout de la tâche: ", error);
@@ -42,7 +43,7 @@ export default function AjoutTache({ taches, setTaches, setFiltre }) {
 
   return (
     <section className="AjoutTache">
-      <form onSubmit={ajouterTache}>
+      <form onSubmit={(evt) => ajouterTache(evt)}>
         <input
           type="text"
           placeholder="Ajoutez une tâche ..."

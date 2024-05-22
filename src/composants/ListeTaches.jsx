@@ -10,8 +10,7 @@ export default function ListeTaches({ taches, setTaches }) {
       try {
         // Chercher toutes les tâches dans Firestore
         const toutesLesTaches = await lireTout();
-
-        // Raffraîchir l'état React des tâches
+        // puis raffraîchir l'état React des tâches.
         setTaches(toutesLesTaches);
       } catch (error) {
         console.error("Erreur lors de la récupération des tâches: ", error);
@@ -26,10 +25,9 @@ export default function ListeTaches({ taches, setTaches }) {
    */
   async function supprimerTache(idTache) {
     try {
-      // Supprimer la tâche dans Firestore
+      // Supprimer la tâche dans Firestore ...
       await supprimer(idTache);
-
-      // Raffraîchir l'état React des tâches
+      // ... puis raffraîchir l'état React des tâches.
       setTaches(taches.filter((tache) => tache.id !== idTache));
     } catch (error) {
       console.error("Erreur lors de la suppression de la tâche: ", error);
@@ -43,10 +41,9 @@ export default function ListeTaches({ taches, setTaches }) {
    */
   async function basculerEtatTache(idTache, etatCompletee) {
     try {
-      // Modifier l'état de la tâche dans Firestore
+      // Modifier l'état de la tâche dans Firestore ...
       await modifier(idTache, etatCompletee);
-
-      // Raffraîchir l'état React des tâches
+      // ... puis raffraîchir l'état React des tâches.
       setTaches(
         taches.map((tache) => {
           if (tache.id === idTache) {
