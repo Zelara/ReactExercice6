@@ -51,6 +51,10 @@ export default function AjoutTache({ taches, setTaches, setFiltre }) {
           autoComplete="off"
           autoFocus={true}
         />
+        {/* J'ai utilisé un bouton MUI pour l'uniformité avec le reste 
+        de mes éléments d'interactivité de l'interface, mais un bouton 
+        HTML <button> aurait aussi bien fait l'affaire, exactement de la 
+        même manière. */}
         <Button
           variant="contained"
           type="submit"

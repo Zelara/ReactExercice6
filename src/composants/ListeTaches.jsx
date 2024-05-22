@@ -27,7 +27,10 @@ export default function ListeTaches({ taches, setTaches }) {
   async function supprimerTache(idTache) {
     try {
       // Supprimer la tâche dans Firestore ...
+      // Si vous attendez que le code asynchrone soit complété, il faut
+      // marquer cette fonction comme étant asynchrone ;-)
       await supprimer(idTache);
+
       // ... puis raffraîchir l'état React des tâches.
       setTaches(taches.filter((tache) => tache.id !== idTache));
     } catch (error) {
@@ -73,8 +76,13 @@ export default function ListeTaches({ taches, setTaches }) {
         ) : (
           taches.map((tache) => (
             <Tache
+              // Requis par React
               key={tache.id}
+              // On étale toutes les propriétés de l'objet
+              // "tache" comme des props du composant Tache
               {...tache}
+              // On ajoute des props pour les méthodes des
+              // fonctionnalités requises :
               supprimerTache={supprimerTache}
               basculerEtatTache={basculerEtatTache}
             />
