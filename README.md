@@ -36,14 +36,14 @@
 >Ajoutez des commentaires JSDoc à toutes les fonctions définies dans ce fichier !
 
 9. Dans les composants `React` de votre application, complétez le code nécessaire pour intégrer les données `Firestore` aux fonctionnalités de votre appli (en faisant appel bien évidement aux fonctions produites dans le fichier *modèle* du point précédent). 
-  >Notez que pour les besoins de cet exercice **vous ne devez pas** intégrer les fonctionnalités de la barre de contrôle dans le pied de page de l'application (*filtre des tâches*, *supprimer les tâches complétées*, *nombre de tâches actives*). 
+    >Notez que pour les besoins de cet exercice **vous ne devez pas** intégrer les fonctionnalités de la barre de contrôle dans le pied de page de l'application (*filtre des tâches*, *supprimer les tâches complétées*, *nombre de tâches actives*). 
 
-  Le code de l'interactivité `UI` des 4 fonctionnalités est déjà fourni, vous n'avez qu'à compléter ce code pour intégrer le code de gestion des données que vous avez produit au point précédent :
-    1. Dans le composant `AjoutTache` : fonction `ajouterTache`
-    1. Dans le composant `ListesTaches` : fonctions `chercherTaches`, `supprimerTache` et `basculerEtatTache`
-    1. :warning: Aucun autre composant n'a besoin d'être modifié pour compléter l'exercice
+    Le code de l'interactivité `UI` des 4 fonctionnalités est déjà fourni, vous n'avez qu'à compléter ce code pour intégrer le code de gestion des données que vous avez produit au point précédent :
+      1. Dans le composant `AjoutTache` : fonction `ajouterTache`
+      1. Dans le composant `ListesTaches` : fonctions `chercherTaches`, `supprimerTache` et `basculerEtatTache`
+      1. :warning: Aucun autre composant n'a besoin d'être modifié pour compléter l'exercice
 
-  >Faites bien attention de raffraichîr (à la main) le navigateur Web quand vous testez chacune des fonctionnalités ! Si vous avez des erreurs dans le code d'intégration des données `Firestore`, ça n'apparaîtra que si vous raffraîchissez la page (ou alors, surveillez la *console* JS pour les erreurs de l'API `Firestore`)
+    >Faites bien attention de raffraichîr (à la main) le navigateur Web quand vous testez chacune des fonctionnalités ! Si vous avez des erreurs dans le code d'intégration des données `Firestore`, ça n'apparaîtra que si vous raffraîchissez la page (ou alors, surveillez la *console* JS pour les erreurs de l'API `Firestore`)
 
 10. Synchronisez votre solution complétée avec le dépôt `GitHub` qui vous a été assigné lorsque vous aviez accepté le travail. Écrivez **TOUJOURS** des messages de *commit* significatifs !
 
